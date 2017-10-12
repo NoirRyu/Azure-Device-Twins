@@ -31,7 +31,7 @@ If you finish all the sample, your device’s device twin JSON doc would look li
 
 ![JSON](image/JSON.png) 
 
-## TwinsTagProperties
+## 1.TwinsTagProperties
 ReportConnectivity ( Device app ) : update reported “connectivity”property 
  
  "reported": {
@@ -50,7 +50,7 @@ AddtagsAndQuery (Back end ) : update twins tags and read the changed reported pr
 
 ![TwinsTagProperties](image/TwinsTagProperties.png) 
 
-## DirectMethod 
+## 2.DirectMethod 
 DirectMethodDevice ( Device app ) : register method handler by using SetMethodHandlerAsync 
 
 CallMethodOnDevice ( Back end ) : invoke a method by using InvokeDeviceMethodAsync 
@@ -59,7 +59,7 @@ Those app don’t affect Device Twins properties.
 
 ![DirectMethod](image/DirectMethod.png) 
 
-## DeviceManagement  
+## 3.DeviceManagement  
 DirectMethodDevice ( Device app ) : register and implement method handler “reboot”. After that, update Device twins reported property 
 
 “reported”: {
@@ -74,7 +74,7 @@ TriggerReboot ( Back end ) : invoke the “reboot” method, and get reported pr
 
 ![DeviceManagement](image/DeviceManagement.png) 
 
-## TwinProperties   
+## 4.TwinProperties   
 
 SimulateDevice ( Device app ) : update reported property and register callback function corresponding to Device Twins Desired property change
 
@@ -105,7 +105,7 @@ DesiredConfiguration ( Back end ) : update Device Twins Desired property and get
  
 ![TwinProperties](image/TwinProperties.png) 
 
-## Update  
+## 5.Update  
 
 DirectMethodDevice ( Device app ) : invoke the registered method handler and update Device Twins reported property waiting, downloading, applying and applyComplete respectively. 
 
