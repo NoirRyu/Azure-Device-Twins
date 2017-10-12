@@ -74,12 +74,14 @@ If you finish all the sample, your device’s device twin JSON doc would look li
 
 ## TwinsTagProperties
 ReportConnectivity ( Device app ) : update reported “connectivity”property 
-  "reported": {
+ 
+ "reported": {
       "connectivity": {
         "type": "cellular"
       },
 
 AddtagsAndQuery (Back end ) : update twins tags and read the changed reported property 
+
 "tags": {
     "location": {
       "region": "US",
