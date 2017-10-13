@@ -30,7 +30,44 @@ Device twins are JSON documents that store device state information (metadata, c
 
 If you finish all the sample, your device’s device twin JSON doc would look like below ( skipped all metadata ) 
 
-![JSON](image/JSON.png) 
+    {
+    "deviceId": "test4",
+    "etag": "AAAAAAAAAAU=",
+    "version": 48,
+    "tags": {
+    "location": {
+      "region": "US",
+      "plant": "Redmond43"
+    }
+    },
+    "properties": {
+    "desired": {
+      "$metadata": {
+        "$lastUpdated": "2017-06-16T16:33:28.8922274Z"
+      },
+      "$version": 1
+    },
+    "reported": {
+      "connectivity": {
+        "type": "cellular"
+      },
+      "iothubDM": {
+        "reboot": {
+          "lastReboot": "6/19/2017 4:02:05 PM"
+        },
+        "firmwareUpdate": {
+          "startedWaitingTime": "6/20/2017 3:15:11 AM",
+          "fwPackageUri": "https://someurl",
+          "status": "applyComplete",
+          "downloadCompleteTime": "6/20/2017 3:15:11 AM",
+          "startedApplyingImage": "6/20/2017 3:15:11 AM",
+          "lastFirmwareUpdate": "6/20/2017 3:15:11 AM"
+        }
+      },      
+      "$version": 43
+    }
+    }
+    }
 
 ## 1.TwinsTagProperties
 ReportConnectivity ( Device app ) : update reported “connectivity”property 
