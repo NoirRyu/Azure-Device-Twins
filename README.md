@@ -8,20 +8,21 @@ If you need more specific information, visit the MS Doc site https://docs.micros
 Below’s APIs are particular new APIs for Device Twins management. It might be helpful to look over those APIs descriptions before you compile and implement samples.  
 
 ### Device side 
- DeviceClient. UpdatedReportedPropertiesAsync
+  
+    DeviceClient. UpdatedReportedPropertiesAsync
  
- DeviceClient. SetMethodHandlerAsync(MethodCallback) 
+    DeviceClient. SetMethodHandlerAsync(MethodCallback) 
 
- DeviceClient. SetDesiredPropertyUpdateCallback(DesiredPropertyUpdateCallback)
+    DeviceClient. SetDesiredPropertyUpdateCallback(DesiredPropertyUpdateCallback)
 
 ### Back end side 
- RegistryManager. CreateQuery
+    RegistryManager. CreateQuery
  
- RegistryManager. UpdateTwinAsync
+    RegistryManager. UpdateTwinAsync
  
- RegistryManager. GetTwinAsync
+    RegistryManager. GetTwinAsync
  
- ServiceClient. InvokeDeviceMethodAsync 
+    ServiceClient. InvokeDeviceMethodAsync 
 
 
 ## What is Device Twins? 
@@ -34,19 +35,19 @@ If you finish all the sample, your device’s device twin JSON doc would look li
 ## 1.TwinsTagProperties
 ReportConnectivity ( Device app ) : update reported “connectivity”property 
  
- "reported": {
+    "reported": {
       "connectivity": {
         "type": "cellular"
       },
 
 AddtagsAndQuery (Back end ) : update twins tags and read the changed reported property 
 
-"tags": {
+    "tags": {
     "location": {
       "region": "US",
       "plant": "Redmond43"
-    }
-  },
+      }
+    },
 
 ![TwinsTagProperties](image/TwinsTagProperties.png) 
 
@@ -62,8 +63,8 @@ Those app don’t affect Device Twins properties.
 ## 3.DeviceManagement  
 DirectMethodDevice ( Device app ) : register and implement method handler “reboot”. After that, update Device twins reported property 
 
-“reported”: {
-"iothubDM": {
+    “reported”: {
+    "iothubDM": {
         "reboot": {
           "lastReboot": "10/10/2017 10:28:59 AM"
         }
@@ -78,8 +79,8 @@ TriggerReboot ( Back end ) : invoke the “reboot” method, and get reported pr
 
 SimulateDevice ( Device app ) : update reported property and register callback function corresponding to Device Twins Desired property change
 
-“reported”: {
-"telemetryConfig": {
+    “reported”: {
+     "telemetryConfig": {
         "configId": "0",
         "sendFrequency": "24h"
       },
@@ -88,16 +89,16 @@ Invoke the corresponding callback function if Desired property changed
 
 Update Reported property after callback function invocation 
 
-"reported" {
-  "telemetryConfig: {
-  "configId": "7af4c91d-5c8b-450b-b8a3-6929001d0849",
-  "sendFrequency": "5m",
-  "status": "Success"
-}
+    "reported" {
+     "telemetryConfig: {
+      "configId": "7af4c91d-5c8b-450b-b8a3-6929001d0849",
+      "sendFrequency": "5m",
+      "status": "Success"
+    }
 
 DesiredConfiguration ( Back end ) : update Device Twins Desired property and get changed reported property 
 
-"desired": {
+    "desired": {
       "telemetryConfig": {
         "configId": "7af4c91d-5c8b-450b-b8a3-6929001d0849",
         "sendFrequency": "5m"
@@ -109,8 +110,8 @@ DesiredConfiguration ( Back end ) : update Device Twins Desired property and get
 
 DirectMethodDevice ( Device app ) : invoke the registered method handler and update Device Twins reported property waiting, downloading, applying and applyComplete respectively. 
 
-“reported”: {
-"firmwareUpdate": {
+    “reported”: {
+    "firmwareUpdate": {
           "startedApplyingImage": "10/10/2017 10:56:07 AM",
           "fwPackageUri": "https://someurl",
           "status": "applyComplete",
